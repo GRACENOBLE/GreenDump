@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GreenDump</string>
+    <string name="welcomeMessage">WELCOME TO GREEN DUMP</string>
 </resources>
