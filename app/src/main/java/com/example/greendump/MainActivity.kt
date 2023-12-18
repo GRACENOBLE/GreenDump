@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,7 +20,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -48,7 +46,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Background (){
+fun LandingPageBackground (){
     Surface (
         modifier = Modifier
             .alpha(0.5F)
@@ -64,7 +62,7 @@ fun Background (){
 
 @Composable
 fun LandingPage (){
-    Background()
+    LandingPageBackground()
     Column (
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
@@ -73,7 +71,7 @@ fun LandingPage (){
             modifier = Modifier
                 .width(270.dp)
         ){
-            Header()
+            LandingPageHeader()
         }
 
         Spacer(
@@ -93,7 +91,7 @@ fun LandingPage (){
 }
 
 @Composable
-fun Header (){
+fun LandingPageHeader (){
     Text(
         text = stringResource(R.string.welcomeMessage),
         style = TextStyle(fontSize = 40.sp)

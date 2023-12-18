@@ -1,8 +1,7 @@
-package com.example.greendump.ui.theme
+package com.example.greendump
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,7 +16,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,28 +26,36 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.greendump.R
 
+@ExperimentalMaterial3Api
 @Composable
-fun SignIn (){
-    Background()
+fun SignUp (){
+    Surface (
+        modifier = Modifier
+            .alpha(0.5F)
+    ){
+        SignUpBackground()
+    }
     Column (
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceAround
     ){
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier
                 .fillMaxWidth()
         ) {
-            Header()
+            SignUpHeader()
         }
-        Form()
+        SignupInputFields()
+        SignUpButton()
+        AlternativeSignUpOptions()
     }
 }
 
 @Composable
-fun Background (){
+fun SignUpBackground (){
     Surface (
         modifier = Modifier
             .alpha(0.5F)
@@ -64,40 +70,22 @@ fun Background (){
 }
 
 @Composable
-fun Header(){
+fun SignUpHeader(){
     Text(
-        text = "SIGN IN:",
+        text = "SIGN UP:",
         style = TextStyle(fontSize = 40.sp)
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun Form () {
-    Column (
-        modifier = Modifier
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceAround
-    ){
-        InputFields()
-
-        LoginButton()
-
-        AlternativeSignInOptions()
-    }
-}
-
 @ExperimentalMaterial3Api
 @Composable
-fun InputFields(){
+fun SignupInputFields (){
     Column (
         modifier = Modifier
-            .fillMaxWidth()
             .padding(
                 start = 20.dp,
                 end = 20.dp
-            ),
-        horizontalAlignment = Alignment.CenterHorizontally
+            )
     ){
         OutlinedTextField(
             label = { Text(text = "Username") },
@@ -106,43 +94,64 @@ fun InputFields(){
             modifier = Modifier
                 .fillMaxWidth()
         )
-
-        Spacer(
-            modifier = Modifier
-                .height(40.dp)
-        )
-
         OutlinedTextField(
-            label = { Text(text = "Password") },
+            label = { Text(text = "Email") },
+            value = "",
+            onValueChange = {},
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+        OutlinedTextField(
+            label = { Text(text = "Location Dropdown") },
+            value = "",
+            onValueChange = {},
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+        OutlinedTextField(
+            label = { Text(text = "Phone Number") },
+            value = "",
+            onValueChange = {},
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+        OutlinedTextField(
+            label = { Text(text = "Create Password") },
+            value = "",
+            onValueChange = {},
+            modifier = Modifier
+                .fillMaxWidth()
+        )
+        OutlinedTextField(
+            label = { Text(text = "Confirm Password") },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
     }
-
 }
 
 @Composable
-fun LoginButton(){
+fun SignUpButton(){
     Row (
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(end = 20.dp),
+            .fillMaxWidth(),
         horizontalArrangement = Arrangement.End
     ){
-        Button(onClick = { /*TODO*/ }) {
+        Button(
+            onClick = { /*TODO*/ }
+        ) {
             Text(
-                text = "LOGIN",
+                text = "SIGNUP",
                 style = TextStyle(fontSize = 30.sp)
             )
-
         }
     }
 }
 
 @Composable
-fun AlternativeSignInOptions(){
+fun AlternativeSignUpOptions(){
     Column (
         modifier = Modifier
             .fillMaxWidth(),
@@ -171,7 +180,7 @@ fun AlternativeSignInOptions(){
             )
 
             Text(
-                text = "Sign in with Google",
+                text = "Sign up with Google",
                 style = TextStyle(fontSize = 20.sp)
             )
 
@@ -205,7 +214,7 @@ fun AlternativeSignInOptions(){
             )
 
             Text(
-                text = "Sign in with Microsoft",
+                text = "Sign up with Microsoft",
                 style = TextStyle(fontSize = 20.sp)
             )
 
@@ -213,11 +222,12 @@ fun AlternativeSignInOptions(){
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Preview(
     showBackground = true,
     showSystemUi = true
 )
 @Composable
-fun SignInPreview () {
-    SignIn()
+fun SignUpPreview (){
+    SignUp()
 }
