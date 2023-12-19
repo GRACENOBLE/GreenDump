@@ -4,13 +4,16 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
@@ -24,7 +27,19 @@ import androidx.compose.ui.unit.sp
 fun PaymentMethod(){
     PaymentMethodBackground()
     Column {
+
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
         PaymentHeading()
+
+        Spacer(
+            modifier = Modifier
+                .height(100.dp)
+        )
+
         PaymentMethods()
     }
 }
@@ -61,7 +76,7 @@ fun PaymentHeading(){
 @Composable
 fun PaymentMethods(){
     Column {
-        Button(
+        OutlinedButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
@@ -70,7 +85,12 @@ fun PaymentMethods(){
                     end = 20.dp
                 )
         ) {
-            Row {
+            Row (
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
                 Image(
                     painter = painterResource(id = R.drawable.visa),
                     contentDescription = "Visa Icon",
@@ -82,10 +102,22 @@ fun PaymentMethods(){
                     text = "Visa",
                     style = TextStyle(fontSize = 30.sp)
                 )
+
+                Image(
+                    painter = painterResource(id = R.drawable.next),
+                    contentDescription = "next",
+                    modifier = Modifier
+                        .size(25.dp)
+                )
             }
         }
 
-        Button(
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
+        OutlinedButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
@@ -94,7 +126,12 @@ fun PaymentMethods(){
                     end = 20.dp
                 )
         ) {
-            Row {
+            Row (
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
                 Image(
                     painter = painterResource(id = R.drawable.card),
                     contentDescription = "Mastercard Icon",
@@ -106,10 +143,22 @@ fun PaymentMethods(){
                     text = "Mastercard",
                     style = TextStyle(fontSize = 30.sp)
                 )
+
+                Image(
+                    painter = painterResource(id = R.drawable.next),
+                    contentDescription = "next",
+                    modifier = Modifier
+                        .size(25.dp)
+                )
             }
         }
 
-        Button(
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
+        OutlinedButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
@@ -118,7 +167,12 @@ fun PaymentMethods(){
                     end = 20.dp
                 )
         ) {
-            Row {
+            Row (
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
                 Image(
                     painter = painterResource(id = R.drawable.mobilemoneymtn),
                     contentDescription = "MTN Mobile Money Icon",
@@ -127,13 +181,25 @@ fun PaymentMethods(){
                 )
 
                 Text(
-                    text = "MTN Mobile Money",
+                    text = "MTN Mo-Mo",
                     style = TextStyle(fontSize = 30.sp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.next),
+                    contentDescription = "next",
+                    modifier = Modifier
+                        .size(25.dp)
                 )
             }
         }
 
-        Button(
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
+        OutlinedButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
@@ -142,7 +208,12 @@ fun PaymentMethods(){
                     end = 20.dp
                 )
         ) {
-            Row {
+            Row (
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
                 Image(
                     painter = painterResource(id = R.drawable.airtelmoney),
                     contentDescription = "Airtel money",
@@ -153,6 +224,13 @@ fun PaymentMethods(){
                 Text(
                     text = "Airtel money",
                     style = TextStyle(fontSize = 30.sp)
+                )
+
+                Image(
+                    painter = painterResource(id = R.drawable.next),
+                    contentDescription = "next",
+                    modifier = Modifier
+                        .size(25.dp)
                 )
             }
         }
