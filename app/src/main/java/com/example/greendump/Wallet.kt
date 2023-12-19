@@ -1,18 +1,30 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 
 @Composable
@@ -24,6 +36,20 @@ fun WalletPage(){
         .fillMaxSize()
     ){
         WalletIcon()
+
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
+        DisplayCash()
+
+        Spacer(
+            modifier = Modifier
+                .height(200.dp)
+        )
+
+        CashButtons()
     }
 }
 @Composable
@@ -48,7 +74,114 @@ fun WalletIcon(){
         contentDescription = "Wallet Icon",
         modifier = Modifier
             .size(80.dp)
+            .padding(top = 20.dp)
     )
+}
+
+@Composable
+fun DisplayCash(){
+    Row (
+        modifier = Modifier
+            .fillMaxWidth()
+    ){
+        Text(
+            text = "Balance:",
+            style = TextStyle(fontSize = 30.sp),
+            modifier = Modifier
+                .padding(start = 10.dp)
+        )
+
+        Spacer(
+            modifier = Modifier
+                .width(50.dp)
+        )
+
+        Surface (
+            modifier = Modifier,
+            color = Color.White
+
+        ){
+            Row (
+                horizontalArrangement = Arrangement.End,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ){
+                Text(
+                    text = "Ugx.500,000",
+                    style = TextStyle(fontSize = 30.sp),
+                    modifier = Modifier
+                        .padding(end = 10.dp)
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun CashButtons(){
+    Column (
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                start = 20.dp,
+                end = 20.dp,
+            )
+    ){
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Row {
+                Image(
+                    painter = painterResource(id = R.drawable.add),
+                    contentDescription = "Add Cash icon",
+                    modifier = Modifier
+                        .size(50.dp)
+                )
+
+                Spacer(
+                    modifier = Modifier
+                        .width(10.dp)
+                )
+
+                Text(
+                    text = "Add Cash",
+                    style = TextStyle(fontSize = 30.sp)
+                )
+            }
+        }
+
+        Spacer(
+            modifier = Modifier
+                .height(40.dp)
+        )
+
+        Button(
+            onClick = { /*TODO*/ },
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Row {
+                Image(
+                    painter = painterResource(id = R.drawable.minus),
+                    contentDescription = "Remove Cash icon",
+                    modifier = Modifier
+                        .size(50.dp)
+                )
+
+                Spacer(
+                    modifier = Modifier
+                        .width(10.dp)
+                )
+
+                Text(
+                    text = "Remove Cash",
+                    style = TextStyle(fontSize = 30.sp)
+                )
+            }
+        }
+    }
 }
 
 @Preview(
