@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -28,17 +29,20 @@ import androidx.compose.ui.unit.sp
 fun ServicePricesPage(){
     ServicePricesBackground()
     Column (
+        verticalArrangement = Arrangement.SpaceAround,
         modifier = Modifier
             .fillMaxSize()
     ){
-        Tier()
+        Column {
+            Tier()
 
-        Spacer(
-            modifier = Modifier
-                .width(40.dp)
-        )
+            Spacer(
+                modifier = Modifier
+                    .height(40.dp)
+            )
 
-        Package()
+            Package()
+        }
         Charge()
     }
 }
@@ -203,7 +207,7 @@ fun Charge(){
 
             ){
                 Text(
-                    text = "500,000",
+                    text = "Ugx. 500,000",
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 10.dp)
