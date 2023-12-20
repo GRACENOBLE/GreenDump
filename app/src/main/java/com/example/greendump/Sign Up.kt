@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -64,7 +65,7 @@ fun SignUpBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(R.string.background_image)
         )
     }
 }
@@ -88,42 +89,42 @@ fun SignupInputFields (){
             )
     ){
         OutlinedTextField(
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(R.string.username)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
         OutlinedTextField(
-            label = { Text(text = "Email") },
+            label = { Text(text = stringResource(R.string.email)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
         OutlinedTextField(
-            label = { Text(text = "Location Dropdown") },
+            label = { Text(text = stringResource(R.string.location_dropdown)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
         OutlinedTextField(
-            label = { Text(text = "Phone Number") },
+            label = { Text(text = stringResource(R.string.phone_number)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
         OutlinedTextField(
-            label = { Text(text = "Create Password") },
+            label = { Text(text = stringResource(R.string.create_password)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
                 .fillMaxWidth()
         )
         OutlinedTextField(
-            label = { Text(text = "Confirm Password") },
+            label = { Text(text = stringResource(R.string.confirm_password)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
@@ -143,7 +144,7 @@ fun SignUpButton(){
             onClick = { /*TODO*/ }
         ) {
             Text(
-                text = "SIGNUP",
+                text = stringResource(R.string.signup),
                 style = TextStyle(fontSize = 30.sp)
             )
         }
@@ -169,7 +170,7 @@ fun AlternativeSignUpOptions(){
         ) {
             Image(
                 painter = painterResource(id = R.drawable.google),
-                contentDescription = "The google Icon",
+                contentDescription = stringResource(R.string.google_icon),
                 modifier = Modifier
                     .size(25.dp)
             )
@@ -180,7 +181,7 @@ fun AlternativeSignUpOptions(){
             )
 
             Text(
-                text = "Sign up with Google",
+                text = stringResource(R.string.sign_up_google),
                 style = TextStyle(fontSize = 20.sp)
             )
 
@@ -203,7 +204,7 @@ fun AlternativeSignUpOptions(){
 
             Image(
                 painter = painterResource(id = R.drawable.microsoft),
-                contentDescription = "The google Icon",
+                contentDescription = stringResource(R.string.microsoft_icon),
                 modifier = Modifier
                     .size(25.dp)
             )
@@ -214,7 +215,7 @@ fun AlternativeSignUpOptions(){
             )
 
             Text(
-                text = "Sign up with Microsoft",
+                text = stringResource(R.string.microsoft_sign_up),
                 style = TextStyle(fontSize = 20.sp)
             )
 

@@ -102,7 +102,7 @@ fun LandingPageHeader (){
 fun Icon (){
     Image(painter = painterResource(
         id = R.drawable.launcher_icon),
-        contentDescription = "App Icon"
+        contentDescription = stringResource(R.string.app_icon)
     )
 }
 
@@ -116,7 +116,7 @@ fun SignUpSignInButtons (){
             onClick = { /*TODO*/ }
         ) {
             Text(
-                text = "SIGN UP",
+                text = stringResource(R.string.sign_up),
                 style = TextStyle(fontSize = 30.sp)
             )
         }
@@ -130,7 +130,7 @@ fun SignUpSignInButtons (){
             onClick = { /*TODO*/ }
         ) {
             Text(
-                text = "SIGN IN",
+                text = stringResource(R.string.sign_in),
                 style = TextStyle(fontSize = 30.sp)
             )
         }

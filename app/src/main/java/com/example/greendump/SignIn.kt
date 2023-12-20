@@ -22,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -55,7 +56,7 @@ fun SignInBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -63,7 +64,7 @@ fun SignInBackground (){
 @Composable
 fun SignInHeader(){
     Text(
-        text = "SIGN IN:",
+        text = stringResource(R.string.sign_in_header),
         style = TextStyle(fontSize = 40.sp)
     )
 }
@@ -97,7 +98,7 @@ fun InputFields(){
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         OutlinedTextField(
-            label = { Text(text = "Username") },
+            label = { Text(text = stringResource(id = R.string.username)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
@@ -110,7 +111,7 @@ fun InputFields(){
         )
 
         OutlinedTextField(
-            label = { Text(text = "Password") },
+            label = { Text(text = stringResource(R.string.password)) },
             value = "",
             onValueChange = {},
             modifier = Modifier
@@ -130,7 +131,7 @@ fun LoginButton(){
     ){
         Button(onClick = { /*TODO*/ }) {
             Text(
-                text = "LOGIN",
+                text = stringResource(R.string.login),
                 style = TextStyle(fontSize = 30.sp)
             )
 
@@ -157,7 +158,7 @@ fun AlternativeSignInOptions(){
         ) {
             Image(
                 painter = painterResource(id = R.drawable.google),
-                contentDescription = "The google Icon",
+                contentDescription = stringResource(id = R.string.google_icon),
                 modifier = Modifier
                     .size(25.dp)
             )
@@ -168,7 +169,7 @@ fun AlternativeSignInOptions(){
             )
 
             Text(
-                text = "Sign in with Google",
+                text = stringResource(R.string.google_sign_in),
                 style = TextStyle(fontSize = 20.sp)
             )
 
@@ -191,9 +192,9 @@ fun AlternativeSignInOptions(){
 
             Image(
                 painter = painterResource(id = R.drawable.microsoft),
-                contentDescription = "The google Icon",
+                contentDescription = stringResource(id = R.string.microsoft_icon),
                 modifier = Modifier
-                    .size(25.dp)
+                    .size(25.dp),
             )
 
             Spacer(
@@ -202,7 +203,7 @@ fun AlternativeSignInOptions(){
             )
 
             Text(
-                text = "Sign in with Microsoft",
+                text = stringResource(R.string.sign_in_microsoft),
                 style = TextStyle(fontSize = 20.sp)
             )
 
