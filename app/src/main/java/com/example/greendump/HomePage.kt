@@ -1,7 +1,9 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -18,6 +21,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -50,14 +54,17 @@ fun HomePage(navController: NavController){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ){
-                OutlinedButton(
+                Button(
                     onClick = { navController.navigate( route = Screen.LocationPage.route) },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
                 ) {
-                    Column (
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ){
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        modifier = Modifier
+                            .fillMaxSize()
+                    ) {
                         Image(
                             modifier = Modifier
                                 .size(120.dp),
@@ -71,12 +78,14 @@ fun HomePage(navController: NavController){
                         )
                     }
                 }
-                OutlinedButton(
+                Button(
                     onClick = {
                         navController.navigate( route = Screen.Wallet.route)
                     },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
+
                 ) {
                     Column (
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -102,12 +111,14 @@ fun HomePage(navController: NavController){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ){
-                OutlinedButton(
+                Button(
                     onClick = {
                         navController.navigate( route = Screen.SubscriptionPlanPage.route)
                               },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
+
                 ) {
                     Column (
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -125,12 +136,14 @@ fun HomePage(navController: NavController){
                         )
                     }
                 }
-                OutlinedButton(
+                Button(
                     onClick = {
                         navController.navigate( route = Screen.PaymentMethod.route)
                     },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
+
                 ) {
                     Column (
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -155,12 +168,14 @@ fun HomePage(navController: NavController){
                     .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceAround
             ){
-                OutlinedButton(
+                Button(
                     onClick = {
                         navController.navigate( route = Screen.ServicePricesPage.route)
                     },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
+
                 ) {
                     Column (
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -178,12 +193,14 @@ fun HomePage(navController: NavController){
                         )
                     }
                 }
-                OutlinedButton(
+                Button(
                     onClick = {
                         navController.navigate( route = Screen.BlogPage.route)
                     },
                     shape = RoundedCornerShape(buttonRounding),
-                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                    modifier = Modifier
+                        .size(width = 170.dp, height = 200.dp)
+
                 ) {
                     Column (
                         horizontalAlignment = Alignment.CenterHorizontally
@@ -210,7 +227,7 @@ fun HomePage(navController: NavController){
 fun HomePageBackground (){
     Surface (
         modifier = Modifier
-            .alpha(0.5F)
+
     ){
         Image(
             painter = painterResource(id = R.drawable.background),
