@@ -25,17 +25,184 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 
 @Composable
-fun HomePage(){
+fun HomePage(navController: NavController){
     HomePageBackground()
     Column (
         modifier = Modifier
             .fillMaxSize()
     ){
         HomePageHeader()
-        GridMenu()
+        val buttonRounding = 50.dp
+        val fontSize = 20.sp
+        Column (
+            verticalArrangement = Arrangement.SpaceAround,
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .fillMaxSize()
+        ){
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ){
+                OutlinedButton(
+                    onClick = { navController.navigate( route = Screen.LocationPage.route) },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.pick_up),
+                            contentDescription = stringResource(R.string.pickup_icon)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.schedule_pickup),
+                            style = TextStyle(fontSize = fontSize)
+                        )
+                    }
+                }
+                OutlinedButton(
+                    onClick = {
+                        navController.navigate( route = Screen.Wallet.route)
+                    },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.wallet),
+                            contentDescription = stringResource(R.string.wallet)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.wallet),
+                            style = TextStyle(fontSize = fontSize)
+
+                        )
+                    }
+                }
+            }
+
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ){
+                OutlinedButton(
+                    onClick = {
+                        navController.navigate( route = Screen.SubscriptionPlanPage.route)
+                              },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.subscription),
+                            contentDescription = stringResource(R.string.subscription)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.subscription_plan),
+                            style = TextStyle(fontSize = fontSize)
+                        )
+                    }
+                }
+                OutlinedButton(
+                    onClick = {
+                        navController.navigate( route = Screen.PaymentMethod.route)
+                    },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.debit_card),
+                            contentDescription = stringResource(R.string.payment_methods)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.payment_methods_2),
+                            style = TextStyle(fontSize = fontSize)
+                        )
+                    }
+                }
+            }
+
+            Row (
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceAround
+            ){
+                OutlinedButton(
+                    onClick = {
+                        navController.navigate( route = Screen.ServicePricesPage.route)
+                    },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.price_list),
+                            contentDescription = stringResource(R.string.service_prices)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(R.string.our_service_prices),
+                            style = TextStyle(fontSize = fontSize)
+                        )
+                    }
+                }
+                OutlinedButton(
+                    onClick = {
+                        navController.navigate( route = Screen.BlogPage.route)
+                    },
+                    shape = RoundedCornerShape(buttonRounding),
+                    modifier = Modifier.size(width = 170.dp, height = 200.dp)
+                ) {
+                    Column (
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ){
+                        Image(
+                            modifier = Modifier
+                                .size(120.dp),
+                            painter = painterResource(id = R.drawable.blog),
+                            contentDescription = stringResource(R.string.our_blog)
+                        )
+                        Spacer(modifier = Modifier.height(10.dp))
+                        Text(
+                            text = stringResource(id = R.string.our_blog),
+                            style = TextStyle(fontSize = fontSize)
+                        )
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -95,171 +262,11 @@ fun HomePageHeader (){
     }
 }
 
-@Composable
-fun GridMenu (){
-    val buttonRounding = 50.dp
-    val fontSize = 20.sp
-    Column (
-        verticalArrangement = Arrangement.SpaceAround,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
-    ){
-        Row (
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
-        ){
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.pick_up),
-                        contentDescription = stringResource(R.string.pickup_icon)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(R.string.schedule_pickup),
-                        style = TextStyle(fontSize = fontSize)
-                    )
-                }
-            }
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.wallet),
-                        contentDescription = stringResource(R.string.wallet)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(R.string.wallet),
-                        style = TextStyle(fontSize = fontSize)
-
-                    )
-                }
-            }
-        }
-
-        Row (
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
-        ){
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.subscription),
-                        contentDescription = stringResource(R.string.subscription)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(R.string.subscription_plan),
-                        style = TextStyle(fontSize = fontSize)
-                    )
-                }
-            }
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.debit_card),
-                        contentDescription = stringResource(R.string.payment_methods)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(R.string.payment_methods_2),
-                        style = TextStyle(fontSize = fontSize)
-                    )
-                }
-            }
-        }
-
-        Row (
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceAround
-        ){
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.price_list),
-                        contentDescription = stringResource(R.string.service_prices)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(R.string.our_service_prices),
-                        style = TextStyle(fontSize = fontSize)
-                    )
-                }
-            }
-            OutlinedButton(
-                onClick = { /*TODO*/ },
-                shape = RoundedCornerShape(buttonRounding),
-                modifier = Modifier.size(width = 170.dp, height = 200.dp)
-            ) {
-                Column (
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ){
-                    Image(
-                        modifier = Modifier
-                            .size(120.dp),
-                        painter = painterResource(id = R.drawable.blog),
-                        contentDescription = stringResource(R.string.our_blog)
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
-                    Text(
-                        text = stringResource(id = R.string.our_blog),
-                        style = TextStyle(fontSize = fontSize)
-                    )
-                }
-            }
-        }
-    }
-}
-
 @Preview(
     showBackground = true,
     showSystemUi = true
 )
 @Composable
 fun HomePagePreview (){
-    HomePage()
+    HomePage(navController = rememberNavController())
 }

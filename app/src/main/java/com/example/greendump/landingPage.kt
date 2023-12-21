@@ -5,7 +5,9 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
@@ -52,12 +54,16 @@ fun LandingPage (navController: NavController){
 
         Row(
             modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
         ){
 
             Button(
                 onClick = {
                     navController.navigate( route = Screen.SignUp.route)
-                }
+                },
+                modifier =Modifier
+                    .padding(start = 20.dp)
             ) {
                 Text(
                     text = stringResource(R.string.sign_up),
@@ -65,13 +71,14 @@ fun LandingPage (navController: NavController){
                 )
             }
 
-            Spacer(
-                modifier = Modifier
-                    .width(50.dp)
-            )
+
 
             Button(
-                onClick = { /*TODO*/ }
+                onClick = {
+                    navController.navigate( route = Screen.SignIn.route)
+                },
+                modifier =Modifier
+                    .padding(end = 20.dp)
             ) {
                 Text(
                     text = stringResource(R.string.sign_in),
@@ -115,10 +122,6 @@ fun Icon (){
     )
 }
 
-@Composable
-fun SignUpSignInButtons (){
-
-}
 
 @Preview(
     showBackground = true,
@@ -126,6 +129,6 @@ fun SignUpSignInButtons (){
 )
 @Composable
 fun LandingPagePreview() {
-    //LandingPage()
+    LandingPage(navController = rememberNavController())
 
 }

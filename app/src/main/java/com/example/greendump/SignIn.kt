@@ -2,9 +2,11 @@ package com.example.greendump
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -27,9 +29,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun SignIn (){
+fun SignIn (navController: NavController){
     SignInBackground()
     Column (
         modifier = Modifier
@@ -42,7 +46,33 @@ fun SignIn (){
         ) {
             SignInHeader()
         }
-        Form()
+        Box {
+            Form()
+
+            Column (
+                modifier = Modifier
+                    .fillMaxHeight(),
+                verticalArrangement = Arrangement.Center
+            ){
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(end = 20.dp),
+                    horizontalArrangement = Arrangement.End
+
+                ) {
+                    Button(onClick = {
+                        navController.navigate(route = Screen.HomePage.route)
+                    }) {
+                        Text(
+                            text = stringResource(R.string.login),
+                            style = TextStyle(fontSize = 30.sp)
+                        )
+
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -123,20 +153,7 @@ fun InputFields(){
 
 @Composable
 fun LoginButton(){
-    Row (
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(end = 20.dp),
-        horizontalArrangement = Arrangement.End
-    ){
-        Button(onClick = { /*TODO*/ }) {
-            Text(
-                text = stringResource(R.string.login),
-                style = TextStyle(fontSize = 30.sp)
-            )
-
-        }
-    }
+    
 }
 
 @Composable
@@ -217,5 +234,5 @@ fun AlternativeSignInOptions(){
 )
 @Composable
 fun SignInPreview () {
-    SignIn()
+    SignIn(navController = rememberNavController())
 }

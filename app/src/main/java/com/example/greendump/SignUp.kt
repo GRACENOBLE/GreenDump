@@ -27,10 +27,12 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @ExperimentalMaterial3Api
 @Composable
-fun SignUp (){
+fun SignUp (navController:NavController){
     Surface (
         modifier = Modifier
             .alpha(0.5F)
@@ -50,7 +52,22 @@ fun SignUp (){
             SignUpHeader()
         }
         SignupInputFields()
-        SignUpButton()
+
+        Row (
+            modifier = Modifier
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.End
+        ){
+            Button(
+                onClick = { navController.navigate(route = Screen.HomePage.route) }
+            ) {
+                Text(
+                    text = stringResource(R.string.signup),
+                    style = TextStyle(fontSize = 30.sp)
+                )
+            }
+        }
+
         AlternativeSignUpOptions()
     }
 }
@@ -134,24 +151,6 @@ fun SignupInputFields (){
 }
 
 @Composable
-fun SignUpButton(){
-    Row (
-        modifier = Modifier
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.End
-    ){
-        Button(
-            onClick = { /*TODO*/ }
-        ) {
-            Text(
-                text = stringResource(R.string.signup),
-                style = TextStyle(fontSize = 30.sp)
-            )
-        }
-    }
-}
-
-@Composable
 fun AlternativeSignUpOptions(){
     Column (
         modifier = Modifier
@@ -193,7 +192,7 @@ fun AlternativeSignUpOptions(){
         )
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {  },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(
@@ -230,5 +229,5 @@ fun AlternativeSignUpOptions(){
 )
 @Composable
 fun SignUpPreview (){
-    SignUp()
+        SignUp(navController = rememberNavController())
 }

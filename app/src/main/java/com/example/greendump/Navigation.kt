@@ -26,7 +26,50 @@ fun SetupNavGraph(
         composable(
             route = Screen.SignUp.route
         ){
-            SignUp()
+            SignUp(navController = navController)
+        }
+
+        composable(
+            route = Screen.SignIn.route
+        ){
+            SignIn(navController = navController)
+        }
+
+        composable(
+            route = Screen.HomePage.route
+        ){
+            HomePage(navController = navController)
+        }
+
+        composable(
+            route = Screen.LocationPage.route
+        ){
+            LocationPage()
+        }
+        composable(
+            route = Screen.Wallet.route
+        ){
+            WalletPage()
+        }
+        composable(
+            route = Screen.SubscriptionPlanPage.route
+        ){
+            SubscriptionPlanPage()
+        }
+        composable(
+            route = Screen.PaymentMethod.route
+        ){
+            PaymentMethod()
+        }
+        composable(
+            route = Screen.ServicePricesPage.route
+        ){
+            ServicePricesPage()
+        }
+        composable(
+            route = Screen.BlogPage.route
+        ){
+            BlogPage()
         }
     }
 }
