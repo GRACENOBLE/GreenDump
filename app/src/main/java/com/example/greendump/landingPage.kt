@@ -21,26 +21,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-//enum class LandingPage(){}
-
-@Composable
-fun LandingPageBackground (){
-    Surface (
-        modifier = Modifier
-            .alpha(0.5F)
-    ){
-        Image(
-            painter = painterResource(id = R.drawable.background),
-            contentScale = ContentScale.Crop,
-            alpha = 0.2F,
-            contentDescription = "Background Image"
-        )
-    }
-}
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun LandingPage (){
+fun LandingPage (navController: NavController){
     LandingPageBackground()
     Column (
         verticalArrangement = Arrangement.Center,
@@ -65,9 +50,54 @@ fun LandingPage (){
                 .height(50.dp)
         )
 
-        SignUpSignInButtons()
+        Row(
+            modifier = Modifier
+        ){
+
+            Button(
+                onClick = {
+                    navController.navigate( route = Screen.SignUp.route)
+                }
+            ) {
+                Text(
+                    text = stringResource(R.string.sign_up),
+                    style = TextStyle(fontSize = 30.sp)
+                )
+            }
+
+            Spacer(
+                modifier = Modifier
+                    .width(50.dp)
+            )
+
+            Button(
+                onClick = { /*TODO*/ }
+            ) {
+                Text(
+                    text = stringResource(R.string.sign_in),
+                    style = TextStyle(fontSize = 30.sp)
+                )
+            }
+        }
     }
 }
+
+@Composable
+fun LandingPageBackground (){
+    Surface (
+        modifier = Modifier
+            .alpha(0.5F)
+    ){
+        Image(
+            painter = painterResource(id = R.drawable.background),
+            contentScale = ContentScale.Crop,
+            alpha = 0.2F,
+            contentDescription = "Background Image"
+        )
+    }
+}
+
+
 
 @Composable
 fun LandingPageHeader (){
@@ -87,33 +117,7 @@ fun Icon (){
 
 @Composable
 fun SignUpSignInButtons (){
-    Row(
-        modifier = Modifier
-    ){
 
-        Button(
-            onClick = { /*TODO*/ }
-        ) {
-            Text(
-                text = stringResource(R.string.sign_up),
-                style = TextStyle(fontSize = 30.sp)
-            )
-        }
-
-        Spacer(
-            modifier = Modifier
-                .width(50.dp)
-        )
-
-        Button(
-            onClick = { /*TODO*/ }
-        ) {
-            Text(
-                text = stringResource(R.string.sign_in),
-                style = TextStyle(fontSize = 30.sp)
-            )
-        }
-    }
 }
 
 @Preview(
@@ -122,6 +126,6 @@ fun SignUpSignInButtons (){
 )
 @Composable
 fun LandingPagePreview() {
-    LandingPage()
+    //LandingPage()
 
 }
