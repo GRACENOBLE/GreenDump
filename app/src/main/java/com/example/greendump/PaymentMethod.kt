@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -54,7 +55,7 @@ fun PaymentMethodBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -67,7 +68,7 @@ fun PaymentHeading(){
             .fillMaxWidth()
     ){
         Text(
-            text = "SELECT PAYMENT\nMETHOD:",
+            text = stringResource(R.string.select_payment_method),
             style = TextStyle(fontSize = 30.sp)
         )
     }
@@ -93,7 +94,7 @@ fun PaymentMethods(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.visa),
-                    contentDescription = "Visa Icon",
+                    contentDescription = stringResource(R.string.visa_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -105,7 +106,7 @@ fun PaymentMethods(){
 
                 Image(
                     painter = painterResource(id = R.drawable.next),
-                    contentDescription = "next",
+                    contentDescription = stringResource(R.string.next),
                     modifier = Modifier
                         .size(25.dp)
                 )
@@ -134,19 +135,19 @@ fun PaymentMethods(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.card),
-                    contentDescription = "Mastercard Icon",
+                    contentDescription = stringResource(R.string.mastercard_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
 
                 Text(
-                    text = "Mastercard",
+                    text = stringResource(R.string.mastercard),
                     style = TextStyle(fontSize = 30.sp)
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.next),
-                    contentDescription = "next",
+                    contentDescription = stringResource(R.string.next),
                     modifier = Modifier
                         .size(25.dp)
                 )
@@ -175,7 +176,7 @@ fun PaymentMethods(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.mobilemoneymtn),
-                    contentDescription = "MTN Mobile Money Icon",
+                    contentDescription = stringResource(R.string.mtn_mobile_money_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -187,7 +188,7 @@ fun PaymentMethods(){
 
                 Image(
                     painter = painterResource(id = R.drawable.next),
-                    contentDescription = "next",
+                    contentDescription = stringResource(R.string.next),
                     modifier = Modifier
                         .size(25.dp)
                 )
@@ -216,19 +217,19 @@ fun PaymentMethods(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.airtelmoney),
-                    contentDescription = "Airtel money",
+                    contentDescription = stringResource(R.string.airtel_money),
                     modifier = Modifier
                         .size(50.dp)
                 )
 
                 Text(
-                    text = "Airtel money",
+                    text = stringResource(R.string.airtel_money),
                     style = TextStyle(fontSize = 30.sp)
                 )
 
                 Image(
                     painter = painterResource(id = R.drawable.next),
-                    contentDescription = "next",
+                    contentDescription = stringResource(R.string.next),
                     modifier = Modifier
                         .size(25.dp)
                 )

@@ -46,4 +46,20 @@
     <string name="add_cash">Add Cash</string>
     <string name="remove_cash_icon">Remove Cash icon</string>
     <string name="remove_cash">Remove Cash</string>
+    <string name="cancel_subscription">Cancel Subscription</string>
+    <string name="extend_subscription">Extend Subscription</string>
+    <string name="renew_subscription">Renew Subscription</string>
+    <string name="change_subscription">Change Subscription</string>
+    <string name="pseudo_date">12/12/23</string>
+    <string name="expiry">Expiry:</string>
+    <string name="premium">Premium</string>
+    <string name="premium_icon">Premium Icon</string>
+    <string name="plan">Plan:</string>
+    <string name="select_payment_method">SELECT PAYMENT\nMETHOD:</string>
+    <string name="visa_icon">Visa Icon</string>
+    <string name="next">next</string>
+    <string name="mastercard_icon">Mastercard Icon</string>
+    <string name="mastercard">Mastercard</string>
+    <string name="mtn_mobile_money_icon">MTN Mobile Money Icon</string>
+    <string name="airtel_money">Airtel money</string>
 </resources>

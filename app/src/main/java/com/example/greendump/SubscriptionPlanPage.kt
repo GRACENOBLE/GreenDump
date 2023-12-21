@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -59,7 +60,7 @@ fun SubscriptionPlanPageBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -71,7 +72,7 @@ fun Plan(){
             .fillMaxWidth()
     ){
         Text(
-            text = "Plan:",
+            text = stringResource(R.string.plan),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 40.dp)
@@ -95,7 +96,7 @@ fun Plan(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.premium),
-                    contentDescription = "Premium Icon",
+                    contentDescription = stringResource(R.string.premium_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -106,7 +107,7 @@ fun Plan(){
                 )
 
                 Text(
-                    text = "Premium",
+                    text = stringResource(R.string.premium),
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 40.dp)
@@ -123,7 +124,7 @@ fun Expiry(){
             .fillMaxWidth()
     ){
         Text(
-            text = "Expiry:",
+            text = stringResource(R.string.expiry),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 40.dp)
@@ -153,7 +154,7 @@ fun Expiry(){
                 )
 
                 Text(
-                    text = "12/12/23",
+                    text = stringResource(R.string.pseudo_date),
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 40.dp)
@@ -181,7 +182,7 @@ fun TopUpButtons(){
             Row {
 
                 Text(
-                    text = "Change Subscription",
+                    text = stringResource(R.string.change_subscription),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }
@@ -201,7 +202,7 @@ fun TopUpButtons(){
 
 
                 Text(
-                    text = "Renew Subscription",
+                    text = stringResource(R.string.renew_subscription),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }
@@ -220,7 +221,7 @@ fun TopUpButtons(){
             Row {
 
                 Text(
-                    text = "Extend Subscription",
+                    text = stringResource(R.string.extend_subscription),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }
@@ -239,7 +240,7 @@ fun TopUpButtons(){
             Row {
 
                 Text(
-                    text = "Cancel Subscription",
+                    text = stringResource(R.string.cancel_subscription),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }
