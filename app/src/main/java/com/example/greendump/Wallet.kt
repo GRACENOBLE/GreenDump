@@ -21,6 +21,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -62,7 +63,7 @@ fun WalletPageBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -71,7 +72,7 @@ fun WalletPageBackground (){
 fun WalletIcon(){
     Image(
         painter = painterResource(R.drawable.wallet),
-        contentDescription = "Wallet Icon",
+        contentDescription = stringResource(R.string.wallet_icon),
         modifier = Modifier
             .size(80.dp)
             .padding(top = 20.dp)
@@ -85,7 +86,7 @@ fun DisplayCash(){
             .fillMaxWidth()
     ){
         Text(
-            text = "Balance:",
+            text = stringResource(R.string.balance),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 10.dp)
@@ -107,7 +108,7 @@ fun DisplayCash(){
                     .fillMaxWidth()
             ){
                 Text(
-                    text = "Ugx.500,000",
+                    text = stringResource(R.string.ugx_500_000),
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 10.dp)
@@ -135,7 +136,7 @@ fun CashButtons(){
             Row {
                 Image(
                     painter = painterResource(id = R.drawable.add),
-                    contentDescription = "Add Cash icon",
+                    contentDescription = stringResource(R.string.add_cash_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -146,7 +147,7 @@ fun CashButtons(){
                 )
 
                 Text(
-                    text = "Add Cash",
+                    text = stringResource(R.string.add_cash),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }
@@ -165,7 +166,7 @@ fun CashButtons(){
             Row {
                 Image(
                     painter = painterResource(id = R.drawable.minus),
-                    contentDescription = "Remove Cash icon",
+                    contentDescription = stringResource(R.string.remove_cash_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -176,7 +177,7 @@ fun CashButtons(){
                 )
 
                 Text(
-                    text = "Remove Cash",
+                    text = stringResource(R.string.remove_cash),
                     style = TextStyle(fontSize = 30.sp)
                 )
             }

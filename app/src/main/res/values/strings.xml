@@ -34,4 +34,16 @@
     <string name="service_prices">Service prices</string>
     <string name="our_service_prices">Our Service\nPrices</string>
     <string name="our_blog">Our blog</string>
+    <string name="google_maps_icon">Google maps icon</string>
+    <string name="select_pickup_point">Select Pickup \n Point</string>
+    <string name="map_place_holder">Map place holder</string>
+    <string name="confirm_icon">confirm icon</string>
+    <string name="confirm">Confirm</string>
+    <string name="wallet_icon">Wallet Icon</string>
+    <string name="balance">Balance:</string>
+    <string name="ugx_500_000">Ugx.500,000</string>
+    <string name="add_cash_icon">Add Cash icon</string>
+    <string name="add_cash">Add Cash</string>
+    <string name="remove_cash_icon">Remove Cash icon</string>
+    <string name="remove_cash">Remove Cash</string>
 </resources>
