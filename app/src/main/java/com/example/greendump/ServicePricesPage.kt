@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -57,7 +58,7 @@ fun ServicePricesBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -69,7 +70,7 @@ fun Tier(){
             .fillMaxWidth()
     ){
         Text(
-            text = "Tier:",
+            text = stringResource(R.string.tier),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 10.dp)
@@ -93,7 +94,7 @@ fun Tier(){
             ){
                 Image(
                     painter = painterResource(id = R.drawable.premium),
-                    contentDescription = "Premium Icon",
+                    contentDescription = stringResource(id = R.string.premium_icon),
                     modifier = Modifier
                         .size(50.dp)
                 )
@@ -110,7 +111,7 @@ fun Tier(){
                         .fillMaxWidth()
                 ){
                     Text(
-                        text = "Premium",
+                        text = stringResource(id = R.string.premium),
                         style = TextStyle(fontSize = 30.sp),
                         modifier = Modifier
                             .padding(end = 10.dp)
@@ -118,7 +119,7 @@ fun Tier(){
 
                     Image(
                         painter = painterResource(id = R.drawable.down_arrow),
-                        contentDescription = "Dropdown Icon",
+                        contentDescription = stringResource(R.string.dropdown_icon),
                         modifier = Modifier
                             .size(40.dp)
                             .padding(end = 10.dp)
@@ -137,7 +138,7 @@ fun Package(){
             .fillMaxWidth()
     ){
         Text(
-            text = "Package:",
+            text = stringResource(R.string.pack),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 10.dp)
@@ -166,7 +167,7 @@ fun Package(){
                         .fillMaxWidth()
                 ){
                     Text(
-                        text = "Premium 1",
+                        text = stringResource(R.string.premium_1),
                         style = TextStyle(fontSize = 30.sp),
                         modifier = Modifier
                             .padding(end = 10.dp)
@@ -174,7 +175,7 @@ fun Package(){
 
                     Image(
                         painter = painterResource(id = R.drawable.down_arrow),
-                        contentDescription = "Dropdown Icon",
+                        contentDescription = stringResource(R.string.dropdown_icon),
                         modifier = Modifier
                             .size(40.dp)
                             .padding(end = 10.dp)
@@ -197,7 +198,7 @@ fun Charge(){
             horizontalAlignment = Alignment.CenterHorizontally
         ){
             Text(
-                text = "Charge:",
+                text = stringResource(R.string.charge),
                 style = TextStyle(fontSize = 30.sp)
             )
 
@@ -207,7 +208,7 @@ fun Charge(){
 
             ){
                 Text(
-                    text = "Ugx. 500,000",
+                    text = stringResource(R.string.pseudo_cash),
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 10.dp)

@@ -62,4 +62,14 @@
     <string name="mastercard">Mastercard</string>
     <string name="mtn_mobile_money_icon">MTN Mobile Money Icon</string>
     <string name="airtel_money">Airtel money</string>
+    <string name="tier">Tier:</string>
+    <string name="dropdown_icon">Dropdown Icon</string>
+    <string name="package">Package:</string>
+    <string name="premium_1">Premium 1</string>
+    <string name="charge">Charge:</string>
+    <string name="pseudo_cash">Ugx. 500,000</string>
+    <string name="pack">package</string>
+    <string name="blog_icon">Blog Icon</string>
+    <string name="blog_page">Blog Page:</string>
+    <string name="article_image">Article Image</string>
 </resources>

@@ -51,7 +51,7 @@ fun BlogPageBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -67,13 +67,13 @@ fun BlogIcon(){
     ){
         Image(
             painter = painterResource(id = R.drawable.blog),
-            contentDescription = "Blog Icon",
+            contentDescription = stringResource(R.string.blog_icon),
             modifier = Modifier
                 .size(90.dp)
         )
 
         Text(
-            text = "Blog Page:",
+            text = stringResource(R.string.blog_page),
             style = TextStyle(fontSize = 30.sp),
             modifier = Modifier
                 .padding(start = 10.dp)
@@ -114,7 +114,7 @@ fun Articles(){
                 ){
                     Image(
                         painter = painterResource(id = currentImage),
-                        contentDescription = "Kid in trash",
+                        contentDescription = stringResource(R.string.article_image),
                         contentScale = ContentScale.Crop,
                     )
                 }
