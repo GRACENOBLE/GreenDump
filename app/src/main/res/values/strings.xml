@@ -22,4 +22,16 @@
     <string name="login">LOGIN</string>
     <string name="password">Password</string>
     <string name="sign_in_header">SIGN IN:</string>
+    <string name="back_button">Back Button</string>
+    <string name="profile_icon">Profile Icon</string>
+    <string name="pickup_icon">Pickup Icon</string>
+    <string name="schedule_pickup">Schedule\nPickup</string>
+    <string name="wallet">Wallet</string>
+    <string name="subscription">Subscription</string>
+    <string name="subscription_plan">Subscription\nPlan</string>
+    <string name="payment_methods">Payment methods</string>
+    <string name="payment_methods_2">Payment\nMethods</string>
+    <string name="service_prices">Service prices</string>
+    <string name="our_service_prices">Our Service\nPrices</string>
+    <string name="our_blog">Our blog</string>
 </resources>

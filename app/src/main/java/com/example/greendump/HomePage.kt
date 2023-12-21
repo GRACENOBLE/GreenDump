@@ -20,6 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -48,7 +49,7 @@ fun HomePageBackground (){
             painter = painterResource(id = R.drawable.background),
             contentScale = ContentScale.Crop,
             alpha = 0.2F,
-            contentDescription = "Background Image"
+            contentDescription = stringResource(id = R.string.background_image)
         )
     }
 }
@@ -67,7 +68,8 @@ fun HomePageHeader (){
                 .size(40.dp)
                 .padding(start = 10.dp),
             painter = painterResource(id = R.drawable.left),
-            contentDescription = "Back Button")
+            contentDescription = stringResource(R.string.back_button)
+        )
 
         Text(
             text = "HOME:",
@@ -85,7 +87,7 @@ fun HomePageHeader (){
                 modifier = Modifier
                     .size(40.dp),
                 painter = painterResource(id = R.drawable.profile),
-                contentDescription = "Profile Icon"
+                contentDescription = stringResource(R.string.profile_icon)
             )
 
             Text(text = "Account")
@@ -120,11 +122,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.pick_up),
-                        contentDescription = "Pickup Icon"
+                        contentDescription = stringResource(R.string.pickup_icon)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Schedule\nPickup",
+                        text = stringResource(R.string.schedule_pickup),
                         style = TextStyle(fontSize = fontSize)
                     )
                 }
@@ -141,11 +143,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.wallet),
-                        contentDescription = "Wallet"
+                        contentDescription = stringResource(R.string.wallet)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Wallet",
+                        text = stringResource(R.string.wallet),
                         style = TextStyle(fontSize = fontSize)
 
                     )
@@ -170,11 +172,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.subscription),
-                        contentDescription = "Subscription"
+                        contentDescription = stringResource(R.string.subscription)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Subscription\nPlan",
+                        text = stringResource(R.string.subscription_plan),
                         style = TextStyle(fontSize = fontSize)
                     )
                 }
@@ -191,11 +193,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.debit_card),
-                        contentDescription = "Payment methods"
+                        contentDescription = stringResource(R.string.payment_methods)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Payment\nMethods",
+                        text = stringResource(R.string.payment_methods_2),
                         style = TextStyle(fontSize = fontSize)
                     )
                 }
@@ -219,11 +221,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.price_list),
-                        contentDescription = "Service prices"
+                        contentDescription = stringResource(R.string.service_prices)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Our Service\nPrices",
+                        text = stringResource(R.string.our_service_prices),
                         style = TextStyle(fontSize = fontSize)
                     )
                 }
@@ -240,11 +242,11 @@ fun GridMenu (){
                         modifier = Modifier
                             .size(120.dp),
                         painter = painterResource(id = R.drawable.blog),
-                        contentDescription = "Our blog"
+                        contentDescription = stringResource(R.string.our_blog)
                     )
                     Spacer(modifier = Modifier.height(10.dp))
                     Text(
-                        text = "Our Blog",
+                        text = stringResource(id = R.string.our_blog),
                         style = TextStyle(fontSize = fontSize)
                     )
                 }
