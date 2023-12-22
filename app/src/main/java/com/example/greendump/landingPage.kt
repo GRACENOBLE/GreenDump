@@ -1,7 +1,9 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -25,17 +27,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+
 
 @Composable
 fun LandingPage (navController: NavController){
     LandingPageBackground()
     Column (
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ){
         Row (
             modifier = Modifier
-                .width(270.dp)
+                .fillMaxWidth()
         ){
             LandingPageHeader()
         }
@@ -108,10 +114,28 @@ fun LandingPageBackground (){
 
 @Composable
 fun LandingPageHeader (){
-    Text(
-        text = stringResource(R.string.welcomeMessage),
-        style = TextStyle(fontSize = 40.sp)
+
+    val cornerShape = RoundedCornerShape(
+        topStart = 0.dp,
+        topEnd = 0.dp,
+        bottomStart = 120.dp,
+        bottomEnd = 120.dp,
     )
+
+    Box {
+        Surface (
+            modifier  = Modifier
+                .fillMaxWidth()
+                .height(300.dp)
+                .clip(cornerShape),
+            color = Color(0xFF2e8355)
+        ){
+        }
+        Text(
+            text = stringResource(R.string.welcomeMessage),
+            style = TextStyle(fontSize = 40.sp)
+        )
+    }
 }
 
 @Composable
