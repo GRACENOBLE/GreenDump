@@ -255,7 +255,7 @@ fun Description (){
             fontSize = 20.sp,
             fontFamily = poppins,
             fontWeight = FontWeight.Medium,
-
+            color = Color.Black
         )
     )
 }
