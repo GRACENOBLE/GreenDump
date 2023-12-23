@@ -1,6 +1,8 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -13,9 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,6 +38,7 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun LandingPage (navController: NavController){
+
     LandingPageBackground()
     Column (
         verticalArrangement = Arrangement.SpaceBetween,
@@ -48,50 +51,118 @@ fun LandingPage (navController: NavController){
             LandingPageHeader()
         }
 
-        Spacer(
+        Column (
             modifier = Modifier
-                .height(50.dp)
-        )
-
-        Description()
-
-        Spacer(
-            modifier = Modifier
-                .height(50.dp)
-        )
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.CenterHorizontally
         ){
 
-            Button(
-                onClick = {
-                    navController.navigate( route = Screen.SignUp.route)
-                },
-                modifier =Modifier
-                    .padding(start = 20.dp)
-            ) {
-                Text(
-                    text = stringResource(R.string.sign_up),
-                    style = TextStyle(fontSize = 30.sp)
+            Description()
+
+
+            Column {
+                Surface(
+                    modifier = Modifier
+                        .clickable { navController.navigate(route = Screen.SignUp.route) }
+                        .fillMaxWidth()
+                        .padding(
+                            start = 20.dp,
+                            end = 20.dp
+                        )
+                        .clip(
+                            RoundedCornerShape(40.dp)
+                        )
+                        .height(50.dp),
+                    color = Color(0xFFAA7A00)
+                ) {
+                    Row(
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.sign_up),
+                            style = TextStyle(fontSize = 20.sp),
+                            color = Color.White
+                        )
+                    }
+                }
+
+                Spacer(
+                    modifier = Modifier
+                        .height(30.dp)
                 )
-            }
 
 
 
-            Button(
-                onClick = {
-                    navController.navigate( route = Screen.SignIn.route)
-                },
-                modifier =Modifier
-                    .padding(end = 20.dp)
-            ) {
-                Text(
-                    text = stringResource(R.string.sign_in),
-                    style = TextStyle(fontSize = 30.sp)
+                TextButton(
+                    onClick = { navController.navigate(route = Screen.SignUp.route) },
+                    modifier = Modifier
+                        .padding(
+                            start = 20.dp,
+                            end = 20.dp
+                        )
+                        .border(
+                            width = 1.dp,
+                            color = Color(0xFFAA7A00),
+                            shape = RoundedCornerShape(40.dp)
+                        ),
+
+
+                ) {
+                    Row(
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    ) {
+                        Text(
+                            text = stringResource(R.string.sign_up),
+                            style = TextStyle(fontSize = 20.sp),
+                            color = Color(0xFFAA7A00)
+                        )
+                    }
+                }
+
+                Spacer(
+                    modifier = Modifier
+                        .height(30.dp)
                 )
+
+                Surface(
+                    modifier = Modifier
+                        .padding(
+                            start = 20.dp,
+                            end = 20.dp
+                        )
+                        .clickable { navController.navigate(route = Screen.SignUp.route) }
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(40.dp))
+                        .border(
+                            width = 1.dp,
+                            color = Color(0xFFAA7A00),
+                            shape = RoundedCornerShape(40.dp)
+                        )
+                        .height(50.dp),
+                    color = Color.Transparent
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        horizontalArrangement = Arrangement.Center,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = stringResource(R.string.sign_in),
+                            style = TextStyle(
+                                fontSize = 20.sp,
+                                color = Color(0xFFAA7A00)
+                            ),
+                        )
+                    }
+                }
             }
         }
     }
