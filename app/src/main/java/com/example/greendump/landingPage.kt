@@ -1,41 +1,38 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 
 @Composable
 fun LandingPage (navController: NavController){
@@ -56,7 +53,7 @@ fun LandingPage (navController: NavController){
                 .height(50.dp)
         )
 
-        Icon()
+        Description()
 
         Spacer(
             modifier = Modifier
@@ -104,14 +101,10 @@ fun LandingPage (navController: NavController){
 fun LandingPageBackground (){
     Surface (
         modifier = Modifier
-            .alpha(0.5F)
+            .fillMaxSize(),
+        color = Color.White
     ){
-        Image(
-            painter = painterResource(id = R.drawable.background),
-            contentScale = ContentScale.Crop,
-            alpha = 0.2F,
-            contentDescription = "Background Image"
-        )
+
     }
 }
 
@@ -120,7 +113,7 @@ fun LandingPageBackground (){
 @Composable
 fun LandingPageHeader (){
 
-    var poppins = FontFamily(
+    val poppins = FontFamily(
         Font(R.font.poppins_black , FontWeight.Black),
         Font(R.font.poppins_blackitalic , FontWeight.Black),
         Font(R.font.poppins_bold , FontWeight.Bold),
@@ -161,7 +154,7 @@ fun LandingPageHeader (){
         ){
             Box (
                 modifier = Modifier
-                    .height(230.dp)
+                    .height(250.dp)
             ){
                 Image(
                     painter = painterResource(id = R.drawable.recycle_icon),
@@ -180,7 +173,7 @@ fun LandingPageHeader (){
                         text = "GREEN",
                         style = TextStyle(
                             fontSize = 50.sp,
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.ExtraBold,
                             color = Color.White,
                             fontFamily = poppins
                         )
@@ -193,7 +186,7 @@ fun LandingPageHeader (){
                         text = "DUMP",
                         style = TextStyle(
                             fontSize = 50.sp,
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.ExtraBold,
                             color = Color.Black,
                             fontFamily = poppins
                         )
@@ -205,10 +198,38 @@ fun LandingPageHeader (){
 }
 
 @Composable
-fun Icon (){
-    Image(painter = painterResource(
-        id = R.drawable.launcher_icon),
-        contentDescription = stringResource(R.string.app_icon)
+fun Description (){
+
+    val poppins = FontFamily(
+        Font(R.font.poppins_black , FontWeight.Black),
+        Font(R.font.poppins_blackitalic , FontWeight.Black),
+        Font(R.font.poppins_bold , FontWeight.Bold),
+        Font(R.font.poppins_bolditalic , FontWeight.Bold),
+        Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
+        Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
+        Font(R.font.poppins_extralight , FontWeight.ExtraLight),
+        Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
+        Font(R.font.poppins_italic , FontWeight.Normal),
+        Font(R.font.poppins_light , FontWeight.Light),
+        Font(R.font.poppins_lightitalic , FontWeight.Light),
+        Font(R.font.poppins_medium , FontWeight.Medium),
+        Font(R.font.poppins_mediumitalic , FontWeight.Medium),
+        Font(R.font.poppins_regular , FontWeight.Normal),
+        Font(R.font.poppins_thin , FontWeight.Thin),
+        Font(R.font.poppins_thinitalic, FontWeight.Thin),
+        Font(R.font.poppins_semibold, FontWeight.SemiBold),
+        Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
+    )
+
+    Text(
+        text = "Join the modern way\nto manage waste",
+        textAlign = TextAlign.Center,
+        style = TextStyle(
+            fontSize = 20.sp,
+            fontFamily = poppins,
+            fontWeight = FontWeight.Medium,
+
+        )
     )
 }
 
