@@ -2,7 +2,6 @@ package com.example.greendump
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -15,6 +14,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -62,32 +63,25 @@ fun LandingPage (navController: NavController){
 
 
             Column {
-                Surface(
+
+                Button(
+                    onClick = { navController.navigate(route = Screen.SignUp.route) },
+                    colors = ButtonDefaults.buttonColors(
+                        Color(0xFFAA7A00)
+                    ),
                     modifier = Modifier
-                        .clickable { navController.navigate(route = Screen.SignUp.route) }
                         .fillMaxWidth()
                         .padding(
                             start = 20.dp,
                             end = 20.dp
                         )
-                        .clip(
-                            RoundedCornerShape(40.dp)
-                        )
-                        .height(50.dp),
-                    color = Color(0xFFAA7A00)
+                        .height(50.dp)
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                    ) {
-                        Text(
-                            text = stringResource(R.string.sign_up),
-                            style = TextStyle(fontSize = 20.sp),
-                            color = Color.White
-                        )
-                    }
+                    Text(
+                        text = "Sign Up",
+                        style = TextStyle(fontSize = 20.sp),
+                        color = Color.White
+                    )
                 }
 
                 Spacer(
@@ -95,10 +89,8 @@ fun LandingPage (navController: NavController){
                         .height(30.dp)
                 )
 
-
-
                 TextButton(
-                    onClick = { navController.navigate(route = Screen.SignUp.route) },
+                    onClick = { navController.navigate(route = Screen.SignIn.route) },
                     modifier = Modifier
                         .padding(
                             start = 20.dp,
@@ -111,7 +103,7 @@ fun LandingPage (navController: NavController){
                         ),
 
 
-                ) {
+                    ) {
                     Row(
                         horizontalArrangement = Arrangement.Center,
                         verticalAlignment = Alignment.CenterVertically,
@@ -119,50 +111,14 @@ fun LandingPage (navController: NavController){
                             .fillMaxWidth()
                     ) {
                         Text(
-                            text = stringResource(R.string.sign_up),
+                            text = stringResource(R.string.sign_in),
                             style = TextStyle(fontSize = 20.sp),
                             color = Color(0xFFAA7A00)
                         )
                     }
                 }
 
-                Spacer(
-                    modifier = Modifier
-                        .height(30.dp)
-                )
 
-                Surface(
-                    modifier = Modifier
-                        .padding(
-                            start = 20.dp,
-                            end = 20.dp
-                        )
-                        .clickable { navController.navigate(route = Screen.SignUp.route) }
-                        .fillMaxWidth()
-                        .clip(RoundedCornerShape(40.dp))
-                        .border(
-                            width = 1.dp,
-                            color = Color(0xFFAA7A00),
-                            shape = RoundedCornerShape(40.dp)
-                        )
-                        .height(50.dp),
-                    color = Color.Transparent
-                ) {
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        horizontalArrangement = Arrangement.Center,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = stringResource(R.string.sign_in),
-                            style = TextStyle(
-                                fontSize = 20.sp,
-                                color = Color(0xFFAA7A00)
-                            ),
-                        )
-                    }
-                }
             }
         }
     }
