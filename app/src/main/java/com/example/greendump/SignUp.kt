@@ -82,7 +82,8 @@ fun SignUp (navController:NavController){
                 ) {
                     Text(
                         text = "Submit",
-                        style = TextStyle(fontSize = 15.sp)
+                        style = TextStyle(fontSize = 15.sp),
+                        color = Color.White
                     )
                 }
             }
@@ -305,7 +306,8 @@ fun AlternativeSignUpOptions(){
 
             Text(
                 text = stringResource(R.string.sign_up_google),
-                style = TextStyle(fontSize = 15.sp)
+                style = TextStyle(fontSize = 15.sp),
+                color = Color(0xFF2e8355)
             )
 
         }
@@ -343,7 +345,8 @@ fun AlternativeSignUpOptions(){
 
             Text(
                 text = stringResource(R.string.microsoft_sign_up),
-                style = TextStyle(fontSize = 15.sp)
+                style = TextStyle(fontSize = 15.sp),
+                color = Color.White
             )
 
         }

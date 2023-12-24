@@ -19,7 +19,7 @@
     <string name="microsoft_sign_up">Sign up with Microsoft</string>
     <string name="sign_in_microsoft">Sign in with Microsoft</string>
     <string name="google_sign_in">Sign in with Google</string>
-    <string name="login">LOGIN</string>
+    <string name="login">Log In</string>
     <string name="password">Password</string>
     <string name="sign_in_header">SIGN IN:</string>
     <string name="back_button">Back Button</string>
