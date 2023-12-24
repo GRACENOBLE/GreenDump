@@ -62,7 +62,7 @@ fun LandingPage (navController: NavController){
             Description()
 
 
-            Column {
+            Column (){
 
                 Button(
                     onClick = { navController.navigate(route = Screen.SignUp.route) },
@@ -73,20 +73,22 @@ fun LandingPage (navController: NavController){
                         .fillMaxWidth()
                         .padding(
                             start = 20.dp,
-                            end = 20.dp
+                            end = 20.dp,
+                            top = 90.dp
                         )
-                        .height(50.dp)
+                        .height(35.dp)
                 ) {
                     Text(
                         text = "Sign Up",
-                        style = TextStyle(fontSize = 20.sp),
-                        color = Color.White
+                        style = TextStyle(fontSize = 15.sp),
+                        color = Color.White,
+                        textAlign = TextAlign.Center
                     )
                 }
 
                 Spacer(
                     modifier = Modifier
-                        .height(30.dp)
+                        .height(20.dp)
                 )
 
                 TextButton(
@@ -100,7 +102,8 @@ fun LandingPage (navController: NavController){
                             width = 1.dp,
                             color = Color(0xFFAA7A00),
                             shape = RoundedCornerShape(40.dp)
-                        ),
+                        )
+                        .height(35.dp),
 
 
                     ) {
@@ -112,7 +115,7 @@ fun LandingPage (navController: NavController){
                     ) {
                         Text(
                             text = stringResource(R.string.sign_in),
-                            style = TextStyle(fontSize = 20.sp),
+                            style = TextStyle(fontSize = 15.sp),
                             color = Color(0xFFAA7A00)
                         )
                     }
