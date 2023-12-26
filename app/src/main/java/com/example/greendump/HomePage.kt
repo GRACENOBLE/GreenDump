@@ -29,6 +29,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,6 +39,28 @@ import androidx.navigation.compose.rememberNavController
 
 @Composable
 fun HomePage(navController: NavController){
+
+    val poppins = FontFamily(
+        Font(R.font.poppins_black , FontWeight.Black),
+        Font(R.font.poppins_blackitalic , FontWeight.Black),
+        Font(R.font.poppins_bold , FontWeight.Bold),
+        Font(R.font.poppins_bolditalic , FontWeight.Bold),
+        Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
+        Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
+        Font(R.font.poppins_extralight , FontWeight.ExtraLight),
+        Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
+        Font(R.font.poppins_italic , FontWeight.Normal),
+        Font(R.font.poppins_light , FontWeight.Light),
+        Font(R.font.poppins_lightitalic , FontWeight.Light),
+        Font(R.font.poppins_medium , FontWeight.Medium),
+        Font(R.font.poppins_mediumitalic , FontWeight.Medium),
+        Font(R.font.poppins_regular , FontWeight.Normal),
+        Font(R.font.poppins_thin , FontWeight.Thin),
+        Font(R.font.poppins_thinitalic, FontWeight.Thin),
+        Font(R.font.poppins_semibold, FontWeight.SemiBold),
+        Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
+    )
+
     HomePageBackground()
     Column (
         modifier = Modifier
@@ -79,7 +102,15 @@ fun HomePage(navController: NavController){
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = stringResource(R.string.schedule_pickup),
-                            style = TextStyle(fontSize = fontSize)
+                            textAlign = TextAlign.Center,
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            ),
+
+
                         )
                     }
                 }
@@ -106,7 +137,12 @@ fun HomePage(navController: NavController){
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = stringResource(R.string.wallet),
-                            style = TextStyle(fontSize = fontSize)
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            )
 
                         )
                     }
@@ -140,8 +176,14 @@ fun HomePage(navController: NavController){
                         )
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
-                            text = stringResource(R.string.subscription_plan),
-                            style = TextStyle(fontSize = fontSize)
+                            text = "Plan",
+                            textAlign = TextAlign.Center,
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            )
                         )
                     }
                 }
@@ -168,7 +210,13 @@ fun HomePage(navController: NavController){
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = stringResource(R.string.payment_methods_2),
-                            style = TextStyle(fontSize = fontSize)
+                            textAlign = TextAlign.Center,
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            )
                         )
                     }
                 }
@@ -202,7 +250,13 @@ fun HomePage(navController: NavController){
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = stringResource(R.string.our_service_prices),
-                            style = TextStyle(fontSize = fontSize)
+                            textAlign = TextAlign.Center,
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            )
                         )
                     }
                 }
@@ -229,7 +283,12 @@ fun HomePage(navController: NavController){
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
                             text = stringResource(id = R.string.our_blog),
-                            style = TextStyle(fontSize = fontSize)
+                            style = TextStyle(
+                                fontSize = fontSize,
+                                fontFamily = poppins,
+                                fontWeight = FontWeight.ExtraBold,
+                                color = Color.White,
+                            )
                         )
                     }
                 }
@@ -249,7 +308,9 @@ fun HomePage(navController: NavController){
             ) {
                 Text(
                     text = "Visit our website",
-                    style = TextStyle(fontSize = 15.sp),
+                    style = TextStyle(
+                        fontSize = 15.sp
+                    ),
                     color = Color.White
                 )
 
