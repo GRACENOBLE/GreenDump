@@ -244,11 +244,12 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(75.dp),
+                                .size(80.dp)
+                                .padding(top = 10.dp),
                             painter = painterResource(id = R.drawable.price_list),
                             contentDescription = stringResource(R.string.service_prices)
                         )
-                        Spacer(modifier = Modifier.height(25.dp))
+                        Spacer(modifier = Modifier.height(20.dp))
                         Text(
                             text = "Prices",
                             textAlign = TextAlign.Center,
