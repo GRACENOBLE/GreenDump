@@ -90,18 +90,19 @@ fun HomePage(navController: NavController){
                 ) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center,
                         modifier = Modifier
                             .fillMaxSize()
                     ) {
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.pick_up),
                             contentDescription = stringResource(R.string.pickup_icon)
                         )
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
-                            text = stringResource(R.string.schedule_pickup),
+                            text = "Pickup",
                             textAlign = TextAlign.Center,
                             style = TextStyle(
                                 fontSize = fontSize,
@@ -130,7 +131,7 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.wallet),
                             contentDescription = stringResource(R.string.wallet)
                         )
@@ -170,7 +171,7 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.subscription),
                             contentDescription = stringResource(R.string.subscription)
                         )
@@ -203,13 +204,13 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.debit_card),
                             contentDescription = stringResource(R.string.payment_methods)
                         )
                         Spacer(modifier = Modifier.height(10.dp))
                         Text(
-                            text = stringResource(R.string.payment_methods_2),
+                            text = "Cards",
                             textAlign = TextAlign.Center,
                             style = TextStyle(
                                 fontSize = fontSize,
@@ -243,13 +244,13 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(75.dp),
                             painter = painterResource(id = R.drawable.price_list),
                             contentDescription = stringResource(R.string.service_prices)
                         )
-                        Spacer(modifier = Modifier.height(10.dp))
+                        Spacer(modifier = Modifier.height(25.dp))
                         Text(
-                            text = stringResource(R.string.our_service_prices),
+                            text = "Prices",
                             textAlign = TextAlign.Center,
                             style = TextStyle(
                                 fontSize = fontSize,
@@ -276,7 +277,7 @@ fun HomePage(navController: NavController){
                     ){
                         Image(
                             modifier = Modifier
-                                .size(120.dp),
+                                .size(100.dp),
                             painter = painterResource(id = R.drawable.blog),
                             contentDescription = stringResource(R.string.our_blog)
                         )
