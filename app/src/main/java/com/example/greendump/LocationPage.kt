@@ -1,6 +1,7 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,9 +15,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -36,14 +37,13 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun LocationPage(){
     LocationPageBackground()
+    Map()
     Column (
-        verticalArrangement = Arrangement.SpaceAround,
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceBetween
     ){
         LocationPageHeader()
-        LocationText()
-        Map()
         ConfirmButton()
     }
 }
@@ -169,33 +169,13 @@ fun LocationPageHeader (){
 }
 
 @Composable
-fun LocationText(){
-    Row (
-        horizontalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxWidth()
-    ){
-        Text(
-            text = stringResource(R.string.select_pickup_point),
-            style = TextStyle(fontSize = 30.sp)
-        )
-    }
-}
-
-@Composable
 fun Map(){
     Image(
         painter = painterResource(id = R.drawable.map),
         contentDescription = stringResource(R.string.map_place_holder),
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(
-                start = 20.dp,
-                end = 20.dp,
-                bottom = 50.dp
-            )
-            .height(400.dp)
-            ,
+            .fillMaxSize()
+            .height(400.dp),
         contentScale = ContentScale.Crop
 
     )
@@ -204,17 +184,25 @@ fun Map(){
 @Composable
 fun ConfirmButton(){
     Row (
-        horizontalArrangement = Arrangement.End,
         modifier = Modifier
             .fillMaxWidth()
     ){
-        Button(
+        TextButton(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .padding(
-                    end = 10.dp,
+                    start = 20.dp,
+                    end = 20.dp,
                     bottom = 70.dp
                 )
+                .fillMaxWidth()
+                .height(35.dp)
+                .border(
+                    width = 1.dp,
+                    color = Color(0xFFAA7A00),
+                    shape = RoundedCornerShape(40.dp)
+                ),
+            //colors = ButtonDefaults.buttonColors(Color(0xFFAA7A00))
         ) {
             Row (
                 verticalAlignment = Alignment.CenterVertically
@@ -223,7 +211,7 @@ fun ConfirmButton(){
                     painter = painterResource(id = R.drawable.confirmation),
                     contentDescription = stringResource(R.string.confirm_icon),
                     modifier = Modifier
-                        .size(30.dp)
+                        .size(20.dp)
                 )
 
                 Spacer(
@@ -233,7 +221,10 @@ fun ConfirmButton(){
 
                 Text(
                     text = stringResource(R.string.confirm),
-                    style = TextStyle(fontSize = 30.sp)
+                    style = TextStyle(
+                        fontSize = 15.sp,
+                        color =Color(0xFFAA7A00)
+                    )
                 )
             }
         }
