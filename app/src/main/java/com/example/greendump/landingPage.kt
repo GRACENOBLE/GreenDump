@@ -62,7 +62,7 @@ fun LandingPage (navController: NavController){
             Description()
 
 
-            Column (){
+            Column {
 
                 Button(
                     onClick = { navController.navigate(route = Screen.SignUp.route) },
