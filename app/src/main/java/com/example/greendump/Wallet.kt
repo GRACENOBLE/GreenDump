@@ -2,9 +2,12 @@ package com.example.greendump
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -25,6 +28,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -38,18 +44,18 @@ fun WalletPage(){
         modifier = Modifier
         .fillMaxSize()
     ){
-        WalletIcon()
+        WalletPageHeader()
 
         Spacer(
             modifier = Modifier
-                .height(40.dp)
+                .height(200.dp)
         )
 
         DisplayCash()
 
         Spacer(
             modifier = Modifier
-                .height(200.dp)
+                .height(100.dp)
         )
 
         CashButtons()
@@ -64,17 +70,119 @@ fun WalletPageBackground (){
     ){
     }
 }
-
 @Composable
-fun WalletIcon(){
-    Image(
-        painter = painterResource(R.drawable.wallet),
-        contentDescription = stringResource(R.string.wallet_icon),
-        modifier = Modifier
-            .size(80.dp)
-            .padding(top = 20.dp)
+fun WalletPageHeader (){
+
+    val poppins = FontFamily(
+        Font(R.font.poppins_black , FontWeight.Black),
+        Font(R.font.poppins_blackitalic , FontWeight.Black),
+        Font(R.font.poppins_bold , FontWeight.Bold),
+        Font(R.font.poppins_bolditalic , FontWeight.Bold),
+        Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
+        Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
+        Font(R.font.poppins_extralight , FontWeight.ExtraLight),
+        Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
+        Font(R.font.poppins_italic , FontWeight.Normal),
+        Font(R.font.poppins_light , FontWeight.Light),
+        Font(R.font.poppins_lightitalic , FontWeight.Light),
+        Font(R.font.poppins_medium , FontWeight.Medium),
+        Font(R.font.poppins_mediumitalic , FontWeight.Medium),
+        Font(R.font.poppins_regular , FontWeight.Normal),
+        Font(R.font.poppins_thin , FontWeight.Thin),
+        Font(R.font.poppins_thinitalic, FontWeight.Thin),
+        Font(R.font.poppins_semibold, FontWeight.SemiBold),
+        Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
     )
+    Row(
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically,
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(60.dp),
+    ){
+
+        Surface (//back button
+            color = Color(0xFF2e8355),
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(80.dp)
+                .clip(
+                    RoundedCornerShape(
+                        bottomEnd = 20.dp
+                    )
+                )
+        ){
+            Box (
+                Modifier
+                    .fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ){
+                Image(
+                    painter = painterResource(id = R.drawable.left),
+                    contentDescription = "Back button",
+                    Modifier
+                        .size(40.dp)
+
+                )
+            }
+        }
+
+        Surface (
+            color = Color(0xFF2e8355),
+            modifier = Modifier
+                .fillMaxHeight()
+                .clip(
+                    RoundedCornerShape(
+                        bottomStart = 20.dp,
+                        bottomEnd = 20.dp
+                    )
+                )
+        ){
+            Text(
+                text = "Wallet:",
+                style = TextStyle(
+                    fontSize = 40.sp,
+                    fontFamily = poppins,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = Color.White
+                ),
+                modifier = Modifier
+                    .padding(
+                        start = 20.dp,
+                        end = 10.dp
+                    )
+            )
+        }
+
+        Surface (//back button
+            color = Color(0xFF2e8355),
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(80.dp)
+                .clip(
+                    RoundedCornerShape(
+                        bottomStart = 20.dp
+                    )
+                )
+        ){
+            Box (
+                Modifier
+                    .fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ){
+                Image(
+                    painter = painterResource(id = R.drawable.profile),
+                    contentDescription = "Back button",
+                    Modifier
+                        .size(40.dp)
+
+                )
+            }
+        }
+    }
 }
+
+
 
 @Composable
 fun DisplayCash(){
