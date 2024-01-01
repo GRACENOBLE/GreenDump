@@ -61,7 +61,12 @@ fun SubscriptionPlanPage(){
             Expiry()
         }
 
-        TopUpButtons()
+        Column (
+            modifier = Modifier
+                .fillMaxSize()
+        ){
+            TopUpButtons()
+        }
     }
 }
 
@@ -311,7 +316,7 @@ fun TopUpButtons(){
             .padding(
                 start = 20.dp,
                 end = 20.dp,
-                bottom = 50.dp
+                top = 100.dp
             )
     ){
         Button(
