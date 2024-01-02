@@ -11,14 +11,14 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -51,47 +51,51 @@ fun ServicePricesPage(){
 @Composable
 fun ServicePricesBackground (){
     Surface (
+        color =  Color.White,
         modifier = Modifier
-            .alpha(0.5F)
+            .fillMaxSize()
     ){
-        Image(
-            painter = painterResource(id = R.drawable.background),
-            contentScale = ContentScale.Crop,
-            alpha = 0.2F,
-            contentDescription = stringResource(id = R.string.background_image)
-        )
     }
 }
 
 @Composable
 fun Tier(){
-    Row (
+    Surface(
+        color = Color(0xFF2e8355),
         modifier = Modifier
             .fillMaxWidth()
-    ){
-        Text(
-            text = stringResource(R.string.tier),
-            style = TextStyle(fontSize = 30.sp),
+            .padding(end = 20.dp)
+            .clip(
+                RoundedCornerShape(
+                    topEnd = 40.dp,
+                    bottomEnd = 40.dp
+
+                )
+            )
+            .height(70.dp)
+    ) {
+        Row(
             modifier = Modifier
-                .padding(start = 10.dp)
-        )
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = stringResource(R.string.tier),
+                style = TextStyle(fontSize = 30.sp),
+                modifier = Modifier
+                    .padding(start = 10.dp)
+            )
 
-        Spacer(
-            modifier = Modifier
-                .width(50.dp)
-        )
+            Spacer(
+                modifier = Modifier
+                    .width(50.dp)
+            )
 
-        Surface (
-            modifier = Modifier,
-            color = Color.White
-
-        ){
-            Row (
+            Row(
                 horizontalArrangement = Arrangement.Start,
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
                     .fillMaxWidth()
-            ){
+            ) {
                 Image(
                     painter = painterResource(id = R.drawable.premium),
                     contentDescription = stringResource(id = R.string.premium_icon),
@@ -104,12 +108,12 @@ fun Tier(){
                         .width(10.dp)
                 )
 
-                Row (
+                Row(
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier
                         .fillMaxWidth()
-                ){
+                ) {
                     Text(
                         text = stringResource(id = R.string.premium),
                         style = TextStyle(fontSize = 30.sp),
@@ -126,8 +130,8 @@ fun Tier(){
                     )
                 }
             }
-        }
 
+        }
     }
 }
 
@@ -194,27 +198,38 @@ fun Charge(){
             .fillMaxWidth(),
         horizontalArrangement = Arrangement.Center
     ){
-        Column (
-            horizontalAlignment = Alignment.CenterHorizontally
-        ){
-            Text(
-                text = stringResource(R.string.charge),
-                style = TextStyle(fontSize = 30.sp)
-            )
+        Surface(
+            color = Color(0xFF2e8355),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(end = 20.dp)
+                .clip(RoundedCornerShape(
+                    topEnd = 40.dp,
+                    bottomEnd = 40.dp
 
-            Surface (
-                modifier = Modifier,
-                color = Color.White
+                )
+                )
+                .height(70.dp)
+        ) {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxWidth()
+            ) {
+                Text(
+                    text = stringResource(R.string.charge),
+                    style = TextStyle(fontSize = 30.sp)
+                )
 
-            ){
                 Text(
                     text = stringResource(R.string.pseudo_cash),
                     style = TextStyle(fontSize = 30.sp),
                     modifier = Modifier
                         .padding(end = 10.dp)
                 )
-            }
 
+            }
         }
     }
 

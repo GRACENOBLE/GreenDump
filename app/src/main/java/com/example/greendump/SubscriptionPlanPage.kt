@@ -391,7 +391,10 @@ fun TopUpButtons(){
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
-                .border(width = 1.dp, shape = RoundedCornerShape(40.dp), color = Color(0xFFAA7A00))
+                .border(
+                    width = 1.dp,
+                    shape = RoundedCornerShape(40.dp),
+                    color = Color(0xFFAA7A00))
                 .height(buttonHeight)
         ) {
             Row {
