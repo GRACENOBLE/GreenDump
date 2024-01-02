@@ -172,7 +172,7 @@ fun Articles(){
         R.drawable.kidntrash,
         R.drawable.bins,
         R.drawable.taking_out_the_trash,
-        R.drawable.dump,
+        R.drawable.roadside_trash,
         R.drawable.dept_trash,
         R.drawable.stations
 
@@ -209,7 +209,9 @@ fun Articles(){
                         .height(170.dp)
                 ){
                     Text(
-                        text = stringResource(R.string.Lorem)
+                        text = stringResource(R.string.Lorem),
+                        color = Color.Black
+
                     )
                 }
             }
