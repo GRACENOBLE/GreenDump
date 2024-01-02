@@ -191,6 +191,7 @@ fun DisplayCash(){
         modifier = Modifier
             .height(70.dp)
             .fillMaxWidth()
+            .padding(end = 20.dp)
             .clip(
                 shape = RoundedCornerShape(
                     topEnd = 40.dp,
