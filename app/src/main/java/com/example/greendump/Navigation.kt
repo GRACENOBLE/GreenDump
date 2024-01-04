@@ -68,7 +68,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.BlogPage.route
         ){
-            BlogPage()
+            BlogPage(navController = navController)
         }
     }
 }
