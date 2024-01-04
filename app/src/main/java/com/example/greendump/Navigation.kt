@@ -48,7 +48,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.Wallet.route
         ){
-            WalletPage()
+            WalletPage(navController = navController)
         }
         composable(
             route = Screen.SubscriptionPlanPage.route
