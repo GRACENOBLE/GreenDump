@@ -63,7 +63,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.ServicePricesPage.route
         ){
-            ServicePricesPage()
+            ServicePricesPage(navController = navController)
         }
         composable(
             route = Screen.BlogPage.route
