@@ -43,7 +43,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.LocationPage.route
         ){
-            LocationPage()
+            LocationPage(navController = navController)
         }
         composable(
             route = Screen.Wallet.route
