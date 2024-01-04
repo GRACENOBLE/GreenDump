@@ -72,7 +72,6 @@ fun PaymentMethod(
             Surface (//back button
                 color = Color(0xFF2e8355),
                 modifier = Modifier
-                    .clickable { navController.navigate(Screen.HomePage.route) }
                     .fillMaxHeight()
                     .width(80.dp)
                     .clip(
@@ -80,6 +79,7 @@ fun PaymentMethod(
                             bottomEnd = 20.dp
                         )
                     )
+                    .clickable { navController.navigate(Screen.HomePage.route) }
             ){
                 Box (
                     Modifier

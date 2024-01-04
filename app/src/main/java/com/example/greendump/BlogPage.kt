@@ -83,6 +83,7 @@ fun BlogPage(
                             bottomEnd = 20.dp
                         )
                     )
+                    .clickable { navController.navigate(Screen.HomePage.route) }
             ){
                 Box (
                     Modifier
@@ -93,7 +94,6 @@ fun BlogPage(
                         painter = painterResource(id = R.drawable.left),
                         contentDescription = "Back button",
                         Modifier
-                            .clickable { navController.navigate(Screen.HomePage.route) }
                             .size(40.dp)
                     )
                 }
