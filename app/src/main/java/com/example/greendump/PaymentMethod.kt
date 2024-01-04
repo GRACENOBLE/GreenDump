@@ -1,6 +1,7 @@
 package com.example.greendump
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -31,12 +32,123 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun PaymentMethod(){
+fun PaymentMethod(
+    navController: NavController
+){
     PaymentMethodBackground()
     Column {
-        PaymentHeading()
+        val poppins = FontFamily(
+            Font(R.font.poppins_black , FontWeight.Black),
+            Font(R.font.poppins_blackitalic , FontWeight.Black),
+            Font(R.font.poppins_bold , FontWeight.Bold),
+            Font(R.font.poppins_bolditalic , FontWeight.Bold),
+            Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
+            Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
+            Font(R.font.poppins_extralight , FontWeight.ExtraLight),
+            Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
+            Font(R.font.poppins_italic , FontWeight.Normal),
+            Font(R.font.poppins_light , FontWeight.Light),
+            Font(R.font.poppins_lightitalic , FontWeight.Light),
+            Font(R.font.poppins_medium , FontWeight.Medium),
+            Font(R.font.poppins_mediumitalic , FontWeight.Medium),
+            Font(R.font.poppins_regular , FontWeight.Normal),
+            Font(R.font.poppins_thin , FontWeight.Thin),
+            Font(R.font.poppins_thinitalic, FontWeight.Thin),
+            Font(R.font.poppins_semibold, FontWeight.SemiBold),
+            Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
+        )
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(60.dp),
+        ){
+
+            Surface (//back button
+                color = Color(0xFF2e8355),
+                modifier = Modifier
+                    .clickable { navController.navigate(Screen.HomePage.route) }
+                    .fillMaxHeight()
+                    .width(80.dp)
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 20.dp
+                        )
+                    )
+            ){
+                Box (
+                    Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ){
+                    Image(
+                        painter = painterResource(id = R.drawable.left),
+                        contentDescription = "Back button",
+                        Modifier
+                            .size(40.dp)
+
+                    )
+                }
+            }
+
+            Surface (
+                color = Color(0xFF2e8355),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomStart = 20.dp,
+                            bottomEnd = 20.dp
+                        )
+                    )
+            ){
+                Text(
+                    text = "Cards:",
+                    style = TextStyle(
+                        fontSize = 40.sp,
+                        fontFamily = poppins,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color.White
+                    ),
+                    modifier = Modifier
+                        .padding(
+                            start = 20.dp,
+                            end = 10.dp
+                        )
+                )
+            }
+
+            Surface (//back button
+                color = Color(0xFF2e8355),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(80.dp)
+                    .clip(
+                        RoundedCornerShape(
+                            bottomStart = 20.dp
+                        )
+                    )
+            ){
+                Box (
+                    Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ){
+                    Image(
+                        painter = painterResource(id = R.drawable.profile),
+                        contentDescription = "Back button",
+                        Modifier
+                            .size(40.dp)
+
+                    )
+                }
+            }
+        }
 
         Spacer(
             modifier = Modifier
@@ -54,117 +166,6 @@ fun PaymentMethodBackground (){
         modifier = Modifier
             .fillMaxSize()
     ){
-    }
-}
-
-@Composable
-fun PaymentHeading(){
-    val poppins = FontFamily(
-        Font(R.font.poppins_black , FontWeight.Black),
-        Font(R.font.poppins_blackitalic , FontWeight.Black),
-        Font(R.font.poppins_bold , FontWeight.Bold),
-        Font(R.font.poppins_bolditalic , FontWeight.Bold),
-        Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
-        Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
-        Font(R.font.poppins_extralight , FontWeight.ExtraLight),
-        Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
-        Font(R.font.poppins_italic , FontWeight.Normal),
-        Font(R.font.poppins_light , FontWeight.Light),
-        Font(R.font.poppins_lightitalic , FontWeight.Light),
-        Font(R.font.poppins_medium , FontWeight.Medium),
-        Font(R.font.poppins_mediumitalic , FontWeight.Medium),
-        Font(R.font.poppins_regular , FontWeight.Normal),
-        Font(R.font.poppins_thin , FontWeight.Thin),
-        Font(R.font.poppins_thinitalic, FontWeight.Thin),
-        Font(R.font.poppins_semibold, FontWeight.SemiBold),
-        Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
-    )
-    Row(
-        horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically,
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(60.dp),
-    ){
-
-        Surface (//back button
-            color = Color(0xFF2e8355),
-            modifier = Modifier
-                .fillMaxHeight()
-                .width(80.dp)
-                .clip(
-                    RoundedCornerShape(
-                        bottomEnd = 20.dp
-                    )
-                )
-        ){
-            Box (
-                Modifier
-                    .fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ){
-                Image(
-                    painter = painterResource(id = R.drawable.left),
-                    contentDescription = "Back button",
-                    Modifier
-                        .size(40.dp)
-
-                )
-            }
-        }
-
-        Surface (
-            color = Color(0xFF2e8355),
-            modifier = Modifier
-                .fillMaxHeight()
-                .clip(
-                    RoundedCornerShape(
-                        bottomStart = 20.dp,
-                        bottomEnd = 20.dp
-                    )
-                )
-        ){
-            Text(
-                text = "Cards:",
-                style = TextStyle(
-                    fontSize = 40.sp,
-                    fontFamily = poppins,
-                    fontWeight = FontWeight.ExtraBold,
-                    color = Color.White
-                ),
-                modifier = Modifier
-                    .padding(
-                        start = 20.dp,
-                        end = 10.dp
-                    )
-            )
-        }
-
-        Surface (//back button
-            color = Color(0xFF2e8355),
-            modifier = Modifier
-                .fillMaxHeight()
-                .width(80.dp)
-                .clip(
-                    RoundedCornerShape(
-                        bottomStart = 20.dp
-                    )
-                )
-        ){
-            Box (
-                Modifier
-                    .fillMaxSize(),
-                contentAlignment = Alignment.Center
-            ){
-                Image(
-                    painter = painterResource(id = R.drawable.profile),
-                    contentDescription = "Back button",
-                    Modifier
-                        .size(40.dp)
-
-                )
-            }
-        }
     }
 }
 
@@ -339,5 +340,5 @@ fun PaymentMethods(){
 )
 @Composable
 fun PaymentMethodPreview(){
-    PaymentMethod()
+    PaymentMethod(navController = rememberNavController())
 }
