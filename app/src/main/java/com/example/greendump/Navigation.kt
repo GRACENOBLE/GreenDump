@@ -53,7 +53,7 @@ fun SetupNavGraph(
         composable(
             route = Screen.SubscriptionPlanPage.route
         ){
-            SubscriptionPlanPage()
+            SubscriptionPlanPage(navController = navController)
         }
         composable(
             route = Screen.PaymentMethod.route
