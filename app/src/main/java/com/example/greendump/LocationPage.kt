@@ -47,117 +47,119 @@ fun LocationPage(navController : NavController){
         verticalArrangement = Arrangement.SpaceBetween
     ){
 
-            val poppins = FontFamily(
-                Font(R.font.poppins_black , FontWeight.Black),
-                Font(R.font.poppins_blackitalic , FontWeight.Black),
-                Font(R.font.poppins_bold , FontWeight.Bold),
-                Font(R.font.poppins_bolditalic , FontWeight.Bold),
-                Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
-                Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
-                Font(R.font.poppins_extralight , FontWeight.ExtraLight),
-                Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
-                Font(R.font.poppins_italic , FontWeight.Normal),
-                Font(R.font.poppins_light , FontWeight.Light),
-                Font(R.font.poppins_lightitalic , FontWeight.Light),
-                Font(R.font.poppins_medium , FontWeight.Medium),
-                Font(R.font.poppins_mediumitalic , FontWeight.Medium),
-                Font(R.font.poppins_regular , FontWeight.Normal),
-                Font(R.font.poppins_thin , FontWeight.Thin),
-                Font(R.font.poppins_thinitalic, FontWeight.Thin),
-                Font(R.font.poppins_semibold, FontWeight.SemiBold),
-                Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
-            )
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+        val poppins = FontFamily(
+            Font(R.font.poppins_black , FontWeight.Black),
+            Font(R.font.poppins_blackitalic , FontWeight.Black),
+            Font(R.font.poppins_bold , FontWeight.Bold),
+            Font(R.font.poppins_bolditalic , FontWeight.Bold),
+            Font(R.font.poppins_extrabold , FontWeight.ExtraBold),
+            Font(R.font.poppins_extrabolditalic , FontWeight.ExtraBold),
+            Font(R.font.poppins_extralight , FontWeight.ExtraLight),
+            Font(R.font.poppins_extralightitalic , FontWeight.ExtraLight),
+            Font(R.font.poppins_italic , FontWeight.Normal),
+            Font(R.font.poppins_light , FontWeight.Light),
+            Font(R.font.poppins_lightitalic , FontWeight.Light),
+            Font(R.font.poppins_medium , FontWeight.Medium),
+            Font(R.font.poppins_mediumitalic , FontWeight.Medium),
+            Font(R.font.poppins_regular , FontWeight.Normal),
+            Font(R.font.poppins_thin , FontWeight.Thin),
+            Font(R.font.poppins_thinitalic, FontWeight.Thin),
+            Font(R.font.poppins_semibold, FontWeight.SemiBold),
+            Font(R.font.poppins_semibolditalic, FontWeight.SemiBold)
+        )
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(60.dp),
+        ){
+
+            Surface (//back button
+                color = Color(0xFF2e8355),
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(60.dp),
+                    .clickable { navController.navigate(Screen.HomePage.route) }
+                    .fillMaxHeight()
+                    .width(80.dp)
+                    .clip(
+                        RoundedCornerShape(
+                            bottomEnd = 20.dp
+                        )
+                    )
             ){
-
-                Surface (//back button
-                    color = Color(0xFF2e8355),
-                    modifier = Modifier
-                        .clickable { navController.navigate(Screen.HomePage.route) }
-                        .fillMaxHeight()
-                        .width(80.dp)
-                        .clip(
-                            RoundedCornerShape(
-                                bottomEnd = 20.dp
-                            )
-                        )
+                Box (
+                    Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
                 ){
-                    Box (
+                    Image(
+                        painter = painterResource(id = R.drawable.left),
+                        contentDescription = "Back button",
                         Modifier
-                            .fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ){
-                        Image(
-                            painter = painterResource(id = R.drawable.left),
-                            contentDescription = "Back button",
-                            Modifier
-                                .size(40.dp)
+                            .size(40.dp)
 
-                        )
-                    }
-                }
-
-                Surface (
-                    color = Color(0xFF2e8355),
-                    modifier = Modifier
-                        .fillMaxHeight()
-                        .clip(
-                            RoundedCornerShape(
-                                bottomStart = 20.dp,
-                                bottomEnd = 20.dp
-                            )
-                        )
-                ){
-                    Text(
-                        text = "Location:",
-                        style = TextStyle(
-                            fontSize = 40.sp,
-                            fontFamily = poppins,
-                            fontWeight = FontWeight.ExtraBold,
-                            color = Color.White
-                        ),
-                        modifier = Modifier
-                            .padding(
-                                start = 20.dp,
-                                end = 10.dp
-                            )
                     )
                 }
+            }
 
-                Surface (//back button
-                    color = Color(0xFF2e8355),
+            Surface (
+                color = Color(0xFF2e8355),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .clip(
+                        RoundedCornerShape(
+                            bottomStart = 20.dp,
+                            bottomEnd = 20.dp
+                        )
+                    )
+            ){
+                Text(
+                    text = "Location:",
+                    style = TextStyle(
+                        fontSize = 40.sp,
+                        fontFamily = poppins,
+                        fontWeight = FontWeight.ExtraBold,
+                        color = Color.White
+                    ),
                     modifier = Modifier
-                        .fillMaxHeight()
-                        .width(80.dp)
-                        .clip(
-                            RoundedCornerShape(
-                                bottomStart = 20.dp
-                            )
+                        .padding(
+                            start = 20.dp,
+                            end = 10.dp
                         )
-                ){
-                    Box (
-                        Modifier
-                            .fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ){
-                        Image(
-                            painter = painterResource(id = R.drawable.profile),
-                            contentDescription = "Back button",
-                            Modifier
-                                .size(40.dp)
+                )
+            }
 
+            Surface (//back button
+                color = Color(0xFF2e8355),
+                modifier = Modifier
+                    .fillMaxHeight()
+                    .width(80.dp)
+                    .clip(
+                        RoundedCornerShape(
+                            bottomStart = 20.dp
                         )
-                    }
+                    )
+            ){
+                Box (
+                    Modifier
+                        .fillMaxSize(),
+                    contentAlignment = Alignment.Center
+                ){
+                    Image(
+                        painter = painterResource(id = R.drawable.profile),
+                        contentDescription = "Back button",
+                        Modifier
+                            .size(40.dp)
+
+                    )
                 }
             }
         }
 
         ConfirmButton()
+        }
+
+
     }
 
 
